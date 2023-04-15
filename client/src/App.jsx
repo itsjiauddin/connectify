@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ export default function App() {
   return (
     <div className={`${mode}`}>
       <div className="dark:bg-gray-800 h-full">
-        <HashRouter>
+        <BrowserRouter>
           <div className="font-primary mx-auto text-text text-p max-w-7xl dark:text-primary-2">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -24,7 +24,7 @@ export default function App() {
             </Routes>
           </div>
           <ToastContainer />
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </div>
   );

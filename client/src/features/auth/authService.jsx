@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:4000/auth/";
+const API_URL = "https://connectify-rxe2.onrender.com/auth/";
 
 const register = async (userData) => {
   const res = await axios.post(API_URL + "register", userData);

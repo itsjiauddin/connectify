@@ -17,7 +17,7 @@ app.use(cors());
 
 app.use("/auth", authRoutes);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use(errorHandler);
 

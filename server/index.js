@@ -5,6 +5,7 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import { errorHandler } from "./middleware/error.js";
 import authRoutes from "./routes/auth.js";
+import postRoutes from "./routes/post.js";
 
 dotenv.config();
 connectDB();
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/auth", authRoutes);
+app.use("/api/posts", postRoutes);
 
 app.use(errorHandler);
 

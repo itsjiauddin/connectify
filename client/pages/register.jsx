@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { toast } from "react-toastify";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import { login, reset } from "../features/auth/authSlice";
+import { register, reset } from "../features/auth/authSlice";
 
-export default function Login() {
-  const navigate = useNavigate();
+export default function Register() {
+  const router = useRouter();
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
@@ -27,10 +28,10 @@ export default function Login() {
       toast.error(message);
     }
     if (isSuccess || user) {
-      navigate("/");
+      router.push("/");
     }
     dispatch(reset());
-  }, [isError, message, isSuccess, user, navigate, dispatch]);
+  }, [isError, message, isSuccess, user, router, dispatch]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -44,7 +45,7 @@ export default function Login() {
     e.preventDefault();
 
     const userData = { name, email, password };
-    dispatch(login(userData));
+    dispatch(register(userData));
   };
 
   return (
@@ -53,9 +54,18 @@ export default function Login() {
         <h1 className="text-h1 font-bold">Connectify</h1>
       </div>
       <div className="bg-primary-1 p-4 shadow-sm rounded-md space-y-4">
-        <h3 className="font-bold text-h3">Login to your account</h3>
+        <h3 className="font-bold text-h3">Create a new account</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
+            <input
+              type="text"
+              placeholder="Name"
+              id="name"
+              name="name"
+              value={name}
+              onChange={handleChange}
+              className="bg-primary-2 block mx-auto outline-none px-4 py-2 rounded-md"
+            />
             <input
               type="email"
               placeholder="Email"
@@ -81,10 +91,10 @@ export default function Login() {
                 type="submit"
                 className="bg-primary-3 px-4 py-2 rounded-md text-primary-1"
               >
-                Login
+                Register
               </button>
-              <Link to={`/register`}>
-                <p className="mt-4">Don't have an account. Register here</p>
+              <Link href={`/login`}>
+                <p className="mt-4">Already have an account. Login here.</p>
               </Link>
             </>
           )}

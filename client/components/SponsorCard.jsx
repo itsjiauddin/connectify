@@ -1,4 +1,6 @@
-import info4 from "../assets/images/info4.jpeg";
+import Image from "next/image";
+
+import info4 from "../public/assets/info4.jpeg";
 
 export default function SponsorCard() {
   return (
@@ -7,7 +9,7 @@ export default function SponsorCard() {
         <h3 className="text-h3 font-bold">Sponsored</h3>
         <p>Create Ad</p>
       </div>
-      <img src={info4} alt="" className="rounded-md h-60 w-full object-cover" />
+      <Image src={info4} className="rounded-md h-60 w-full object-cover" />
       <div className="flex justify-between">
         <p className="font-bold">MikaCosmetics</p>
         <p>mikacosmetics.com</p>

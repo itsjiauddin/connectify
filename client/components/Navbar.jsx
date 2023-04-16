@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   MdLightMode,
   MdMessage,
@@ -5,7 +6,6 @@ import {
   MdOutlineDarkMode,
   MdOutlineHelp,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { logout } from "../features/auth/authSlice";
@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <div className="flex justify-between items-center bg-primary-1 shadow-md rounded-sm px-4 py-2 dark:bg-secondary-1">
       <div className="flex items-center space-x-4">
-        <Link to={`/`}>
+        <Link href={`/`}>
           <h1 className="text-h1 font-bold">Connectify</h1>
         </Link>
         <input

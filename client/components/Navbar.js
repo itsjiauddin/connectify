@@ -1,15 +1,10 @@
 import Link from "next/link";
-import {
-  MdLightMode,
-  MdMessage,
-  MdNotifications,
-  MdOutlineDarkMode,
-  MdOutlineHelp,
-} from "react-icons/md";
+import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 
-import { logout } from "../features/auth/authSlice";
-import { toggleMode } from "../features/mode/modeSlice";
+import { logout } from "@/features/auth/authSlice";
+import { toggleMode } from "@/features/mode/modeSlice";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -35,9 +30,9 @@ export default function Navbar() {
             <MdOutlineDarkMode size={24} />
           )}
         </div>
-        <MdMessage size={24} />
-        <MdNotifications size={24} />
-        <MdOutlineHelp size={24} />
+        <Link href={`/createpost`}>
+          <FiEdit size={24} />
+        </Link>
         <button
           onClick={() => dispatch(logout())}
           className="bg-primary-3 px-4 py-2 rounded-md text-primary-1"

@@ -11,7 +11,11 @@ export default function FeedCard() {
     <div className="space-y-4">
       <div className="bg-primary-1 py-3 px-4 rounded-md h-fit space-y-4 shadow-sm dark:bg-secondary-1">
         <div className="flex items-center space-x-4">
-          <Image src={p2} className="h-12 w-12 rounded-full object-cover" />
+          <Image
+            src={p2}
+            alt="#"
+            className="h-12 w-12 rounded-full object-cover"
+          />
           <input
             type="text"
             placeholder="What's on your mind.."
@@ -36,7 +40,11 @@ export default function FeedCard() {
       <div className="bg-primary-1 py-3 px-4 rounded-md h-fit space-y-6 shadow-sm dark:bg-secondary-1">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Image src={p3} className="h-12 w-12 rounded-full object-cover" />
+            <Image
+              src={p3}
+              alt="#"
+              className="h-12 w-12 rounded-full object-cover"
+            />
             <div>
               <p className="font-bold">Steve Ralph</p>
               <p>Kolkata, IN</p>
@@ -49,7 +57,11 @@ export default function FeedCard() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic atque
             pariatur distinctio aliquam iusto minima sunt praesentium.
           </p>
-          <Image src={post1} className="h-60 w-full object-cover rounded-md" />
+          <Image
+            src={post1}
+            alt="#"
+            className="h-60 w-full object-cover rounded-md"
+          />
         </div>
       </div>
     </div>

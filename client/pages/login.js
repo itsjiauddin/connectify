@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import { login, reset } from "../features/auth/authSlice";
+import { login, reset } from "@/features/auth/authSlice";
 
 export default function Login() {
   const router = useRouter();
@@ -50,10 +50,10 @@ export default function Login() {
 
   return (
     <div className="space-y-4 text-center">
-      <div className="bg-primary-1 px-4 py-3 shadow-sm rounded-md">
+      <div className="bg-primary-1 px-4 py-3 shadow-sm rounded-md dark:bg-secondary-1">
         <h1 className="text-h1 font-bold">Connectify</h1>
       </div>
-      <div className="bg-primary-1 p-4 shadow-sm rounded-md space-y-4">
+      <div className="bg-primary-1 p-4 shadow-sm rounded-md space-y-4 dark:bg-secondary-1">
         <h3 className="font-bold text-h3">Login to your account</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
@@ -63,7 +63,7 @@ export default function Login() {
               name="email"
               value={email}
               onChange={handleChange}
-              className="bg-primary-2 block mx-auto outline-none px-4 py-2 rounded-md"
+              className="bg-primary-2 block mx-auto outline-none px-4 py-2 rounded-md dark:bg-secondary-2"
             />
             <input
               type="password"
@@ -71,11 +71,11 @@ export default function Login() {
               name="password"
               value={password}
               onChange={handleChange}
-              className="bg-primary-2 block mx-auto outline-none px-4 py-2 rounded-md"
+              className="bg-primary-2 block mx-auto outline-none px-4 py-2 rounded-md dark:bg-secondary-2"
             />
           </div>
           {isLoading ? (
-            <ClipLoader color="#86efac" loading={isLoading} />
+            <ClipLoader color="#60a5fa" loading={isLoading} />
           ) : (
             <>
               <button
